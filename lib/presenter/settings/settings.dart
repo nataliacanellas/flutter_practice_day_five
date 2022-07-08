@@ -19,10 +19,14 @@ class _SettingsState extends State<Settings> {
       body: Padding(
         padding: const EdgeInsets.all(26.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.person,
-              size: 80,
+            const CircleAvatar(
+              radius: 50,
+              child: Icon(
+                Icons.person,
+                size: 80,
+              ),
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -35,7 +39,7 @@ class _SettingsState extends State<Settings> {
                 controller: loginController,
                 keyboardType: TextInputType.multiline,
                 decoration: const InputDecoration(
-                  hintText: 'Coloque o seu email', //some quando vamos escrever
+                  hintText: 'Digite o seu email', //some quando vamos escrever
                   border: InputBorder.none,
                   // labelText: 'Coloque o seu login:'
                 ),
@@ -51,13 +55,14 @@ class _SettingsState extends State<Settings> {
                 controller: passwordController,
                 keyboardType: TextInputType.multiline,
                 decoration: const InputDecoration(
-                  hintText: 'Coloque a sua senha',
+                  hintText: 'Digite a sua senha',
                   border: InputBorder.none, //some quando vamos escrever
                   // labelText: 'Coloque o seu login:'
                 ),
               ),
             ),
             MaterialButton(
+              color: Colors.blue,
               onPressed: () {
                 print(loginController.text);
                 print(passwordController.text);
